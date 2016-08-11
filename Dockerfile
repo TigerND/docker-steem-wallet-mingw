@@ -1,5 +1,5 @@
 
-FROM teego/steem-base:0.2-Ubuntu-xenial
+FROM teego/steem-base:0.3-Ubuntu-xenial
 
 MAINTAINER Aleksandr Zykov <tiger@mano.email>
 
@@ -10,25 +10,20 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN figlet "MinGW" &&\
     ( \
         apt-get install -qy --no-install-recommends \
+            build-essential \
             mingw-w64 \
             g++-mingw-w64 \
-            git-core \
-            bzip2 \
-            zip \
-            faketime \
+            git \
             psmisc \
-            curl \
             make \
-            unzip \
             nsis \
             autoconf \
             libtool \
             automake \
             pkg-config \
             bsdmainutils \
-            libc6-dev \
             python-dev \
-            coreutils \
+            faketime \
     ) &&\
     apt-get clean -qy
 
